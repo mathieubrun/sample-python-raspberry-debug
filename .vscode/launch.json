@@ -1,15 +1,22 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Python: Local",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/src/app/__main__.py",
             "cwd": "${workspaceFolder}/src/app"
+        },
+        {
+            "name": "Python: Attach to docker",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}/src",
+            "remoteRoot": "/src",
+            "port": 3000,
+            "secret": "my_secret",
+            "host": "localhost"
         }
     ]
 }
