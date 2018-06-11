@@ -9,16 +9,6 @@
             "cwd": "${workspaceFolder}/src/app"
         },
         {
-            "name": "Python: Attach to docker",
-            "type": "python",
-            "request": "attach",
-            "localRoot": "${workspaceFolder}/src",
-            "remoteRoot": "/src",
-            "port": 3000,
-            "secret": "my_secret",
-            "host": "localhost"
-        },
-        {
             "name": "Python: Attach to pi",
             "type": "python",
             "request": "attach",
@@ -26,7 +16,7 @@
             "remoteRoot": "/src",
             "port": 3000,
             "secret": "my_secret",
-            "host": "raspberrypi.local"
+            "host": "192.168.1.75"
         }
     ]
 }

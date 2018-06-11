@@ -1,16 +1,20 @@
-FROM alpine:3.6
+FROM resin/rpi-raspbian 
 
-RUN apk add --no-cache python3 && pip3 install --upgrade pip
+RUN apt-get update && \
+    apt-get install -y \
+        python3-minimal \
+        python3-pip \
+        python3-numpy \
+        python3-smbus \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY app/requirements.txt /requirements.txt
-
-RUN pip3 install -r /requirements.txt
-
-COPY debug.py /src/
-
-COPY app /src/app
+COPY requirements.txt /src/
 
 WORKDIR /src
+
+RUN pip3 install -r requirements.txt
+
+COPY . /src/
 
 ENTRYPOINT [ "python3" ]
 
