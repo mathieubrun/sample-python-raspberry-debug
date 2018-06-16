@@ -1,0 +1,5 @@
+IMAGE=sample-debug-py
+CONTAINER_NAME=dbg
+HOST=raspberrypi.local
+USER=pi
+PROJECT=${PWD##*/}

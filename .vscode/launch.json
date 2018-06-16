@@ -16,7 +16,7 @@
             "remoteRoot": "/src",
             "port": 3000,
             "secret": "my_secret",
-            "host": "192.168.1.75"
+            "host": "raspberrypi.local"
         }
     ]
 }

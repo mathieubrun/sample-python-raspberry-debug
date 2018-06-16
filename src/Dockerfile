@@ -3,19 +3,13 @@ FROM resin/rpi-raspbian
 RUN apt-get update && \
     apt-get install -y \
         python3-minimal \
-        python3-pip \
-        python3-numpy \
-        python3-smbus \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt /src/
+        python3-pip && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install ptvsd==3.0.0
 
 COPY . /src/
 
-ENTRYPOINT [ "python3" ]
-
-CMD ["app/__main__.py"]
+ENTRYPOINT [ "python3", "app/__main__.py" ]
